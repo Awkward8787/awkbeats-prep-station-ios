@@ -112,8 +112,12 @@ struct LibraryView: View {
                         Text("Importing \(importing) \(importing == 1 ? "beat" : "beats")…").font(.subheadline).foregroundStyle(Theme.textDim)
                     }.listRowBackground(Theme.plum950)
                 }
-            } footer: {
-                HStack { Spacer(); PoweredByAwkBeats(); Spacer() }.padding(.top, 24)
+            }
+            Section {
+                HStack { Spacer(); PoweredByAwkBeats(); Spacer() }
+                    .padding(.top, 20).padding(.bottom, 8)
+                    .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
             }
         }
         .listStyle(.plain)

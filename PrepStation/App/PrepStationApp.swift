@@ -17,7 +17,10 @@ struct PrepStationApp: App {
         } catch {
             fatalError("Could not open the beat library: \(error)")
         }
-        if demo { DemoLibrary.seed(container.mainContext) }
+        if demo {
+            UserDefaults.standard.register(defaults: ["producerName": "Awkward J"])
+            DemoLibrary.seed(container.mainContext)
+        }
     }
 
     var body: some Scene {
@@ -36,7 +39,8 @@ enum LaunchFlags {
     static let args = ProcessInfo.processInfo.arguments
     static var demo: Bool { args.contains("-demo") }
     static var demoEmpty: Bool { args.contains("-demoEmpty") }
-    static var demoDetail: Bool { args.contains("-demoDetail") }
+    static var demoDetail: Bool { args.contains("-demoDetail") || demoBottom }
+    static var demoBottom: Bool { args.contains("-demoBottom") }
     static var demoSettings: Bool { args.contains("-demoSettings") }
     static var demoFilter: Bool { args.contains("-demoFilter") }
 }

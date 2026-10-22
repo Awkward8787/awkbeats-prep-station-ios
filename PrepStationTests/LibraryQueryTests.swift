@@ -22,7 +22,7 @@ final class LibraryQueryTests: XCTestCase {
     }
 
     func testSearchByTitleArtistKeyBpm() throws {
-        let (_, beats) = try makeBeats()
+        let (container, beats) = try makeBeats(); defer { withExtendedLifetime(container) {} }
         XCTAssertEqual(LibraryQuery.apply(beats, search: "gold", status: nil, sort: .recent).map(\.title), ["Gold Hour"])
         XCTAssertEqual(LibraryQuery.apply(beats, search: "kaia", status: nil, sort: .recent).map(\.title), ["Gold Hour"])
         XCTAssertEqual(LibraryQuery.apply(beats, search: "11A", status: nil, sort: .recent).map(\.title), ["Night Drive"])
@@ -31,7 +31,7 @@ final class LibraryQueryTests: XCTestCase {
     }
 
     func testStatusFilterAndSort() throws {
-        let (_, beats) = try makeBeats()
+        let (container, beats) = try makeBeats(); defer { withExtendedLifetime(container) {} }
         XCTAssertEqual(LibraryQuery.apply(beats, search: "", status: .ready, sort: .bpm).map(\.title), ["Alley Light", "Gold Hour"])
         XCTAssertEqual(LibraryQuery.apply(beats, search: "", status: nil, sort: .recent).map(\.title), ["Gold Hour", "Night Drive", "Alley Light"])
         // Camelot order: 7A (D minor), 8A (A minor), 11A (F# minor)
@@ -39,7 +39,7 @@ final class LibraryQueryTests: XCTestCase {
     }
 
     func testOverridesWin() throws {
-        let (_, beats) = try makeBeats()
+        let (container, beats) = try makeBeats(); defer { withExtendedLifetime(container) {} }
         let b = beats[1]
         b.bpmScale = 0.5
         XCTAssertEqual(b.workingBpm, 70)

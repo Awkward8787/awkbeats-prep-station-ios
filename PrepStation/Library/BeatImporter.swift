@@ -59,11 +59,12 @@ enum BeatImporter {
     static func analyze(_ beat: Beat, context: ModelContext) {
         beat.analysisState = "pending"
         let url = beat.fileURL
-        let id = beat.persistentModelID
+        let id = beat.id
         Task.detached(priority: .userInitiated) {
             let result = try? TrackAnalyzer.analyze(url: url)
             await MainActor.run {
-                guard let b = context.model(for: id) as? Beat else { return }
+                let fetch = FetchDescriptor<Beat>(predicate: #Predicate { $0.id == id })
+                guard let b = try? context.fetch(fetch).first else { return }
                 if let r = result {
                     b.bpmDetected = r.bpm
                     b.bpmConfidence = r.bpmConfidence

@@ -19,6 +19,7 @@ struct SettingsView: View {
                 } header: { Text("Producer") } footer: {
                     Text("Filled in as the producer on every beat you import. The artist stays separate on each beat.")
                 }
+                .listRowBackground(Theme.plum850)
                 if !producerName.trimmingCharacters(in: .whitespaces).isEmpty && !missing.isEmpty {
                     Section {
                         Button("Add \(producerName) to \(missing.count) \(missing.count == 1 ? "beat" : "beats") with no producer") {
@@ -27,9 +28,11 @@ struct SettingsView: View {
                             try? context.save()
                         }
                     }
+                    .listRowBackground(Theme.plum850)
                 }
                 if let applied {
                     Section { Text("Added to \(applied) \(applied == 1 ? "beat" : "beats"). Save tags on each to write it into the file.").foregroundStyle(Theme.textDim) }
+                        .listRowBackground(Theme.plum850)
                 }
                 Section("About") {
                     LabeledContent("Version", value: Bundle.main.versionLabel)
@@ -37,6 +40,7 @@ struct SettingsView: View {
                     Text("Key and BPM are found on your iPhone. Your files never leave it unless you share them.")
                         .font(.footnote).foregroundStyle(Theme.textDim)
                 }
+                .listRowBackground(Theme.plum850)
                 Section {
                     HStack { Spacer(); PoweredByAwkBeats(); Spacer() }
                 }

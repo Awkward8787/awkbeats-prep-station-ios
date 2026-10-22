@@ -37,13 +37,13 @@ enum DemoLibrary {
             }
             if item.status == .leased || item.status == .sold { beat.tagsDirty = false; beat.tagsSavedAt = Date() }
             context.insert(beat)
-            BeatImporter.analyze(beat, context: context)
         }
         try? context.save()
+        for beat in (try? context.fetch(FetchDescriptor<Beat>())) ?? [] { BeatImporter.analyze(beat, context: context) }
     }
 
     /// Simple abstract cover art in the brand palette (placeholder art for the demo only).
-    static func artwork(_ variant: Int) -> Data? {
+    nonisolated static func artwork(_ variant: Int) -> Data? {
         let size = CGSize(width: 600, height: 600)
         let palettes: [(UInt32, UInt32)] = [(0x3A2260, 0xE4B15A), (0x1B1029, 0x8EE0B8), (0x2F1D4A, 0xF4A6C8), (0x24163A, 0x9EB6F0)]
         let (bg, fg) = palettes[variant % palettes.count]

@@ -16,16 +16,23 @@ struct BeatDetailView: View {
     @State private var confirmRemove = false
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: 16) {
-                header
-                analysisCard
-                hearCard
-                detailsCard
-                saveSection
-                fileFooter
+        ScrollViewReader { proxy in
+            ScrollView {
+                VStack(spacing: 16) {
+                    header
+                    analysisCard
+                    hearCard
+                    detailsCard
+                    saveSection
+                    fileFooter.id("bottom")
+                }
+                .padding(16)
             }
-            .padding(16)
+            .onAppear {
+                if LaunchFlags.demoBottom {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) { proxy.scrollTo("bottom", anchor: .bottom) }
+                }
+            }
         }
         .background(Theme.plum950.ignoresSafeArea())
         .navigationTitle(beat.displayTitle)

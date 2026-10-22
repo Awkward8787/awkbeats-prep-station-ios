@@ -16,8 +16,9 @@ run() { xcrun simctl terminate "$UDID" $BID 2>/dev/null || true; xcrun simctl la
 shot() { xcrun simctl io "$UDID" screenshot "$OUT/$1.png" >/dev/null; }
 run -demo; sleep 9; shot prepstation-1-library
 run -demo -demoDetail; sleep 9; shot prepstation-2-beat
-run -demo -demoFilter; sleep 9; shot prepstation-3-filter-ready
-run -demo -demoEmpty; sleep 4; shot prepstation-4-empty
-run -demo -demoSettings; sleep 6; shot prepstation-5-settings
+run -demo -demoBottom; sleep 9; shot prepstation-3-beat-save
+run -demo -demoFilter; sleep 9; shot prepstation-4-filter-ready
+run -demo -demoEmpty; sleep 4; shot prepstation-5-empty
+run -demo -demoSettings; sleep 6; shot prepstation-6-settings
 xcrun simctl terminate "$UDID" $BID 2>/dev/null || true
 ls -la "$OUT"
