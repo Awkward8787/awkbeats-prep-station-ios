@@ -1,0 +1,152 @@
+[
+ {
+  "file": "beat01.mp3",
+  "key": "A minor",
+  "bpm": 140.0,
+  "halftime": false,
+  "swing": 0.0,
+  "set": "A"
+ },
+ {
+  "file": "beat02.wav",
+  "key": "C major",
+  "bpm": 90.0,
+  "halftime": false,
+  "swing": 0.0,
+  "set": "A"
+ },
+ {
+  "file": "beat03.flac",
+  "key": "F# minor",
+  "bpm": 72.5,
+  "halftime": false,
+  "swing": 0.0,
+  "set": "A"
+ },
+ {
+  "file": "beat04.m4a",
+  "key": "D# major",
+  "bpm": 128.0,
+  "halftime": false,
+  "swing": 0.0,
+  "set": "A"
+ },
+ {
+  "file": "beat05.mp3",
+  "key": "G minor",
+  "bpm": 95.0,
+  "halftime": false,
+  "swing": 0.12,
+  "set": "A"
+ },
+ {
+  "file": "beat06.wav",
+  "key": "E minor",
+  "bpm": 150.0,
+  "halftime": true,
+  "swing": 0.0,
+  "set": "A"
+ },
+ {
+  "file": "beat07.flac",
+  "key": "A# major",
+  "bpm": 102.75,
+  "halftime": false,
+  "swing": 0.0,
+  "set": "A"
+ },
+ {
+  "file": "beat08.mp3",
+  "key": "B minor",
+  "bpm": 87.0,
+  "halftime": false,
+  "swing": 0.0,
+  "set": "A"
+ },
+ {
+  "file": "beat09.aiff",
+  "key": "F major",
+  "bpm": 120.0,
+  "halftime": false,
+  "swing": 0.0,
+  "set": "A"
+ },
+ {
+  "file": "beat10.m4a",
+  "key": "C# minor",
+  "bpm": 160.0,
+  "halftime": true,
+  "swing": 0.0,
+  "set": "A"
+ },
+ {
+  "file": "beat11.mp3",
+  "key": "D minor",
+  "bpm": 145.0,
+  "halftime": true,
+  "set": "B"
+ },
+ {
+  "file": "beat12.wav",
+  "key": "G major",
+  "bpm": 98.0,
+  "halftime": false,
+  "set": "B"
+ },
+ {
+  "file": "beat13.flac",
+  "key": "C minor",
+  "bpm": 130.0,
+  "halftime": false,
+  "set": "B"
+ },
+ {
+  "file": "beat14.m4a",
+  "key": "E major",
+  "bpm": 85.5,
+  "halftime": false,
+  "set": "B"
+ },
+ {
+  "file": "beat15.mp3",
+  "key": "F minor",
+  "bpm": 76.0,
+  "halftime": false,
+  "set": "B"
+ },
+ {
+  "file": "beat16.wav",
+  "key": "G# minor",
+  "bpm": 142.0,
+  "halftime": true,
+  "set": "B"
+ },
+ {
+  "file": "beat17.aiff",
+  "key": "A major",
+  "bpm": 110.0,
+  "halftime": false,
+  "set": "B"
+ },
+ {
+  "file": "beat18.mp3",
+  "key": "D# minor",
+  "bpm": 68.0,
+  "halftime": false,
+  "set": "B"
+ },
+ {
+  "file": "beat19.flac",
+  "key": "B major",
+  "bpm": 124.0,
+  "halftime": false,
+  "set": "B"
+ },
+ {
+  "file": "beat20.m4a",
+  "key": "F# major",
+  "bpm": 93.33,
+  "halftime": false,
+  "set": "B"
+ }
+]
